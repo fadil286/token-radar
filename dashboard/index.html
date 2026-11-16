@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar: pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="skip" href="#board">Skip to the board</a>
+<header class="top">
+  <p class="brand"><span class="dot" aria-hidden="true"></span> Token Radar <span class="model">radar-2 model</span></p>
+  <p class="meta" id="meta">Snapshot 2026-11-14 · DefiLlama protocol index</p>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <h1 id="headline">Pre-token protocols, ranked by implied value</h1>
+      <p class="lede" id="lede">The watchlist is the floor: every protocol with at least $50M of TVL and no token on record. The early radar adds pre-token protocols below that floor. Implied value is a model, not a promise.</p>
+      <p class="method" id="method"></p>
+    </div>
+    <dl class="stats" id="stats"></dl>
+  </section>
+  <section class="controls" aria-label="Filter the board">
+    <label>Search <input id="q" type="search" placeholder="Search name, category or chain" autocomplete="off"></label>
+    <label>Category <select id="cat"><option value="">All categories</option></select></label>
+    <label>Chain <select id="chain"><option value="">All chains</option></select></label>
+    <div class="toggle" role="group" aria-label="Token status">
+      <button id="showPre" class="on" type="button">Pre-token</button>
+      <button id="showLive" type="button">Live token</button>
+    </div>
+    <p class="count" id="count"></p>
+  </section>
+  <section id="boardWrap">
+    <p class="hint">Pre-token protocols, strongest implied value first. Select a row for its model and farm plan.</p>
+    <div class="tablewrap"><table id="board">
+      <thead><tr>
+        <th data-sort="rank">Rank</th>
+        <th data-sort="name">Protocol</th>
+        <th data-sort="tvl_usd">TVL</th>
+        <th data-sort="change_7d">7d</th>
+        <th data-sort="age_days">Age</th>
+        <th data-sort="implied_value_usd">Implied value</th>
+        <th>Token</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+  </section>
+  <section id="detail" class="detail" aria-live="polite"></section>
+  <section class="live" id="liveWrap">
+    <h2>Live-token comparables</h2>
+    <p class="lede">These protocols already trade. Their market caps are the market's own values — and the source of the category multiples above. They are never mixed into the ranked board.</p>
+    <div class="tablewrap"><table id="live">
+      <thead><tr><th>Protocol</th><th>TVL</th><th>Market cap</th><th>mcap / TVL</th></tr></thead>
+      <tbody id="liveRows"></tbody>
+    </table></div>
+  </section>
+  <footer>
+    <p>Snapshot 2026-11-14, DefiLlama protocol index. Model radar-2: implied = TVL × category multiple × growth × maturity. Category multiples are medians of live-token mcap/TVL in this snapshot (≥5 comps, else 0.2138 overall). Farm plans are generic guidance, not financial advice.</p>
+  </footer>
+</main>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
